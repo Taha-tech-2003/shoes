@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 const oneDay = 1000 * 60 * 60 * 24;
+const auth = require('./controllers')
 
 
 
@@ -20,13 +21,9 @@ app.use(sessions({
 }));
 
 
-app.get("/register",(req,res)=>{
-    res.send("Welcome to login page")
-});
+app.get("/register", auth.register);
 
-app.get("/login",(req,res)=>{
-    res.send("Welcome to login page")
-});
+app.get("/login", auth.login);
 
 
 
