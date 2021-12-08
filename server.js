@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 
 
 
-
+// mongodb://localhost:27017/shoes
 
 
 // sessions
@@ -47,8 +47,8 @@ app.use(session({
 
 
 
-app.get("/",middlware.auth,control.Home);
-
+app.get("/",control.Home);
+// ,middlware.auth
 app.post("/user/login",middlware.Token,control.login);
 
 app.post("/user/register",middlware.Token,control.register);
