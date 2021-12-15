@@ -13,7 +13,7 @@ function Home(req,res) {
     //     res.send(proData);
     // }).limit(6)
     // res.end()
-    res.send("home")
+    res.send("asdasdasdasd")
 }
 
 
