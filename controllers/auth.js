@@ -74,7 +74,7 @@ module.exports = {
     login,
     register
 }
-
+// Register
 // {
 //     "Name":"TAHA",
 //     "Email":"Ibad@gmail.com",
@@ -82,4 +82,20 @@ module.exports = {
 //     "passwordConf":"12345678",
 //     "Phone":"123123123",
 //     "Gender":"Male"
+// }
+
+
+// login
+// {
+//     "Email":"Ibad@gmail.com",
+//     "Password":"12345678",
+// }
+
+
+// Order
+// {
+//     "ProductIDS":[
+//         {"Proid":"61ae367953deb498cba925bb"},
+//         {"Proid":"61ae364653deb498cba925b8"}
+//     ]
 // }

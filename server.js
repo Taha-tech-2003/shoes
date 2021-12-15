@@ -47,11 +47,33 @@ app.use(session({
 
 
 
-app.get("/",control.Home);
-// ,middlware.auth
+// Post Routes==============================================================
+
 app.post("/user/login",middlware.Token,control.login);
 
 app.post("/user/register",middlware.Token,control.register);
+
+app.post("/user/order",middlware.auth,control.order);
+
+app.post("/user/setting/userupdate",middlware.auth,control.Updateuser);
+
+app.post("/admin/productuploaded", control.PostProduct);
+
+// route
+
+
+
+
+// Get Routes==============================================================
+app.get("/",control.Home);
+
+app.get("/user/setting/userupdate-data",middlware.auth,(req,res)=>{
+    res.render("update-user.ejs")
+});
+
+app.get("/admin/productupload", control.getProduct);
+
+app.get("/user/setting/userdetail",middlware.auth,control.Userdetail);
 
 app.get("/admin/productuploaded",middlware.Token,(req,res)=>{
     res.render("form-product.ejs")
@@ -60,21 +82,6 @@ app.get("/admin/productuploaded",middlware.Token,(req,res)=>{
 app.get("/user/login",middlware.Token,(req,res)=>{
     res.render("login.ejs")
 });
-
-app.get("/user/setting/userdetail",middlware.auth,control.Userdetail);
-
-app.post("/user/setting/userupdate",middlware.auth,control.Updateuser);
-
-app.get("/user/setting/userupdate-data",middlware.auth,(req,res)=>{
-    res.render("update-user.ejs")
-});
-
-app.get("/admin/productupload", control.getProduct);
-
-app.post("/admin/productuploaded", control.PostProduct);
-
-// route
-
 
 
 
@@ -90,3 +97,35 @@ app.listen(port,(err)=>{
         console.log("check your server");
     }
 });
+
+
+
+// DB_CONNECTION="mongodb+srv://taha-shoes-ki-dukan-new:Ea6uU0BPHcV8cAjR@cluster0.y8cl4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+// PORT=3000
+
+
+// Register
+// {
+//     "Name":"TAHA",
+//     "Email":"Ibad@gmail.com",
+//     "Password":"12345678",
+//     "passwordConf":"12345678",
+//     "Phone":"123123123",
+//     "Gender":"Male"
+// }
+
+
+// login
+// {
+//     "Email":"Ibad@gmail.com",
+//     "Password":"12345678",
+// }
+
+
+// Order
+// {
+//     "ProductIDS":[
+//         {"Proid":"61ae367953deb498cba925bb"},
+//         {"Proid":"61ae364653deb498cba925b8"}
+//     ]
+// }
