@@ -20,7 +20,7 @@ function login(req, res) {
 				Name: data.Name,
 				token:data.tokens[0].token
 		  	};
-        res.send("welcome")
+              res.redirect("/")
         }
         else{
             res.send("wrong password")
