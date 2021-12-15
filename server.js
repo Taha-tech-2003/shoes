@@ -64,7 +64,7 @@ app.post("/admin/productuploaded", control.PostProduct);
 
 
 // Get Routes==============================================================
-app.get("/",control.Home);
+app.get("/",middlware.auth,control.Home);
 
 app.get("/user/setting/userupdate-data",middlware.auth,(req,res)=>{
     res.render("update-user.ejs")
