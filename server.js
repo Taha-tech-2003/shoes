@@ -16,7 +16,6 @@ app.set('view engine', 'ejs');
 
 
 
-// mongodb://localhost:27017/shoes
 
 
 // sessions
@@ -118,7 +117,7 @@ app.listen(port,(err)=>{
 // login
 // {
 //     "Email":"Ibad@gmail.com",
-//     "Password":"12345678",
+//     "Password":"12345678"
 // }
 
 
@@ -129,3 +128,7 @@ app.listen(port,(err)=>{
 //         {"Proid":"61ae364653deb498cba925b8"}
 //     ]
 // }
+
+
+
+// mongodb://localhost:27017/shoes
